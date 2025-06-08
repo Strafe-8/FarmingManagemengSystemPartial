@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FarmingManagemengSystem(Partial)</string>
+    <string name="login_here_txt">LOGIN HERE</string>
+    <string name="email_hint">EMAIL</string>
+    <string name="password_hint">PASSWORD</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in_btn">SIGN IN</string>
+    <string name="don_t_have_an_account_txt">Don\'t have an Account?</string>
+    <string name="register_here_btn_txt">REGISTER HERE</string>
+
+    <string-array name="countries_array">
+        <item>Select Country</item>
+        <item>Philippines</item>
+        <item>Thailand</item>
+        <item>Vietnam</item>
+        <item>Indonesia</item>
+    </string-array>
+
+</resources>
