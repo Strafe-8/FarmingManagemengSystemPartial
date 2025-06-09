@@ -40,4 +40,35 @@
         Farm 3
     </string>
 
+    <string name="tracking">
+        TRACKING
+    </string>
+
+    <string name="growth_moni">
+        Growth Monitor
+    </string>
+
+    <string name="average_wei">
+        Average Weight
+    </string>
+
+    <string name="farm_1_2_3_">
+        FARM 1: 2.3 kg
+    </string>
+
+    <string name="add_growth_">
+        + Add Growth Data
+    </string>
+
+    <string name="days">
+        1-14 Days
+    </string>
+
+    <string name="days2">
+        15-28 Days
+    </string>
+
+    <string name="days3">
+        29-45 Days
+    </string>
 </resources>
