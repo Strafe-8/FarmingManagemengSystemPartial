@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         EditText emailInput = findViewById(R.id.EditEmail);
         EditText passwordInput = findViewById(R.id.EditPassword);
         Button signInBtn = findViewById(R.id.sign_in_btn);
-//        TextView forgotPassword = findViewById(R.id.forgot_password);
+        TextView forgotPassword = findViewById(R.id.text_back_to_login);
         Button regBtn = findViewById(R.id.reg_btn);
 
         signInBtn.setOnClickListener(v -> {
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        forgotPassword.setOnClickListener(v ->
-//                startActivity(new Intent(this, ForgotPasswordActivity.class)));
-//
+        forgotPassword.setOnClickListener(v ->
+                startActivity(new Intent(this, ForgotPasswordActivity.class)));
+
         regBtn.setOnClickListener(v ->
                 startActivity(new Intent(this, RegistrationActivity.class)));
     }

@@ -13,20 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="222dp">
 
-        <ImageView
-            android:id="@+id/Chicken_Farm_Background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/chicken_farm_fade" />
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="436dp"
+            android:layout_height="304dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginTop="-17dp"
+            android:background="@drawable/rectangle_6"
+            />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:id="@+id/farm_manage"
+            android:layout_width="match_parent"
+            android:layout_marginTop="90dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/app_name"
-            android:textAppearance="@style/farm_manage"
-            android:textSize="20sp" />
+            android:fontFamily="@font/lexend"
+            android:textAppearance="@style/farm_manage" />
     </FrameLayout>
 
     <TextView
@@ -36,6 +41,7 @@
         android:layout_below="@id/background_image"
         android:layout_marginTop="60dp"
         android:text="@string/login_here_txt"
+        android:fontFamily="@font/lexend"
         android:textColor="#8B4513"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -56,6 +62,7 @@
             android:layout_height="60dp"
             android:padding="15dp"
             android:hint="@string/email_hint"
+            android:fontFamily="@font/lexend"
             android:background="@drawable/rounded_button"
             android:inputType="textEmailAddress" />
 
@@ -65,6 +72,7 @@
             android:layout_height="60dp"
             android:padding="15dp"
             android:hint="@string/password_hint"
+            android:fontFamily="@font/lexend"
             android:background="@drawable/rounded_button"
             android:inputType="textPassword"
             android:layout_marginTop="12dp" />
@@ -78,14 +86,17 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/forgot_password"
+            android:id="@+id/text_back_to_login"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="45dp"
-            android:text="@string/forgot_password"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+            android:layout_marginStart="40dp"
+            android:text="@string/forgot_password_txt"
+            android:fontFamily="@font/lexend"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
 
         <Button
             android:id="@+id/sign_in_btn"
@@ -93,10 +104,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/sign_in_rounded_btn"
-            android:text="@string/sign_in_btn"
+            android:padding="15dp"
+            android:backgroundTint="@color/neon_green"
+            android:text="@string/sign_in_btn_txt"
+            android:fontFamily="@font/lexend"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -112,17 +125,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/don_t_have_an_account_txt"
+            android:fontFamily="@font/lexend"
             android:textColor="#808080"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/reg_btn"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
+            android:padding="15dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_register_btn"
+            android:backgroundTint="@color/teal_ish"
             android:text="@string/register_here_btn_txt"
+            android:fontFamily="@font/lexend"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 </RelativeLayout>

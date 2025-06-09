@@ -1,13 +1,38 @@
 <resources>
-    <string name="app_name">FarmingManagemengSystem(Partial)</string>
+    <string name="app_name">FARM MANAGEMENT SYSTEM</string>
+    <string name="todo">TODO</string>
+
     <string name="login_here_txt">LOGIN HERE</string>
+    <string name="don_t_have_an_account_txt">Don\'t have an Account?</string>
+    <string name="forgot_password_txt">Forgot Password?</string>
+    <string name="forgot_password_page_txt">FORGOT PASSWORD</string>
+    <string name="register_your_account_txt">Register your account</string>
+
     <string name="email_hint">EMAIL</string>
     <string name="password_hint">PASSWORD</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="sign_in_btn">SIGN IN</string>
-    <string name="don_t_have_an_account_txt">Don\'t have an Account?</string>
-    <string name="register_here_btn_txt">REGISTER HERE</string>
+    <string name="username_hint">USERNAME</string>
+    <string name="new_password_hint">NEW PASSWORD</string>
+    <string name="confirm_new_password_hint"> CONFIRM NEW PASSWORD</string>
 
+    <string name="sign_in_btn_txt">SIGN IN</string>
+    <string name="register_here_btn_txt">REGISTER HERE</string>
+    <string name="sign_up_btn_txt">SIGN UP</string>
+    <string name="back_to_login_txt_btn">Back to Login</string>
+    <string name="change_password_txt_btn">CHANGE PASSWORD</string>
+
+    <string name="register_txt">Register</string>
+    <string name="health_stat">Health Status</string>
+    <string name="mortality_r">Mortality Rate</string>
+    <string name="growth_prog">Growth Progress</string>
+
+    <string name="farm_1">Farm 1</string>
+    <string name="farm_2">Farm 2</string>
+    <string name="farm_3">Farm 3</string>
+
+    <string name="select_your_country_btn">Select your country</string>
+    <string name="tracking">TRACKING</string>
+    <string name="growth_moni">Growth Monitor</string>
+    <string name="add_growth_">+ Add Growth Data</string>
     <string-array name="countries_array">
         <item>Select Country</item>
         <item>Philippines</item>
