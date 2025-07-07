@@ -8,11 +8,18 @@
     <string name="forgot_password_page_txt">FORGOT PASSWORD</string>
     <string name="register_your_account_txt">Register your account</string>
 
+    <string name="more_info">More Info</string>
+    <string name="products">Product</string>
+    <string name="all">All</string>
+    <string name="feeds">Feed</string>
+    <string name="vet">Vet</string>
+
     <string name="email_hint">EMAIL</string>
     <string name="password_hint">PASSWORD</string>
     <string name="username_hint">USERNAME</string>
     <string name="new_password_hint">NEW PASSWORD</string>
     <string name="confirm_new_password_hint"> CONFIRM NEW PASSWORD</string>
+    <string name="Search_hint">Search</string>
 
     <string name="sign_in_btn_txt">SIGN IN</string>
     <string name="register_here_btn_txt">REGISTER HERE</string>

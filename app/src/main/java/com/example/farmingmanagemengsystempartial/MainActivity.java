@@ -15,8 +15,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-    public String storedEmail = "random@gmail.com";
-    public String storedPassword = "1234";
+    public String storedEmail = "1";
+    public String storedPassword = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

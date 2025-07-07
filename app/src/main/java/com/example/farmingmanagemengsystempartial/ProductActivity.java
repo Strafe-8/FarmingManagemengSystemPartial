@@ -3,7 +3,7 @@ package com.example.farmingmanagemengsystempartial;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,19 +13,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ProductActivity extends AppCompatActivity {
 
+    ImageView Back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_product);
 
-        Button bh_btn = findViewById(R.id.BackHome);
+        Back = findViewById(R.id.imageView13);
 
-        bh_btn.setOnClickListener(new View.OnClickListener() {
+        Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent PIntent = new Intent(ProductActivity.this, DashboardActivity.class);
-                startActivity(PIntent);
+                Intent intent = new Intent(ProductActivity.this, DashboardActivity.class);
+                startActivity(intent);
             }
         });
 
