@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <!--Farm Size (Number of Chickens)-->
+    <!-- Farm Size (Number of Chickens) -->
+
+    <!-- Sample Size (Number of Chickens to weight) -->
+
+    <!-- Sample 1 (Weight in kg) -->
+
+    <!-- Sample 2 (Weight in kg) -->
+
     <ImageView
-        android:id="@+id/rectangle_45"
-        android:layout_width="394dp"
-        android:layout_height="500dp"
+        android:id="@+id/AddinfoBox"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/rectangle_8"
@@ -21,176 +28,149 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.092" />
 
-    <TextView
-        android:id="@+id/farm_size"
-        android:layout_width="68dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="@string/farm_size"
-        android:fontFamily="@font/lexend"
-        android:textAppearance="@style/farm_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
-
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="333dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
-        android:ems="10"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/lexend"
         android:hint="Number of Chickens"
-        android:fontFamily="@font/lexend"
         android:inputType="number"
         android:padding="15dp"
-        android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
-
-    <!--Sample Size (Number of Chickens to weight)-->
-    <TextView
-        android:id="@+id/sample_size"
-        android:layout_width="83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="@string/sample_size"
-        android:fontFamily="@font/lexend"
-        android:textAppearance="@style/sample_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
-
-    <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="327dp"
-        android:layout_height="61dp"
-        android:ems="10"
-        android:hint="Number of Chickens  to weight"
-        android:fontFamily="@font/lexend"
-        android:inputType="number"
-        android:padding="15dp"
-        android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
-
-    <!--Sample 1 (Weight in kg)-->
-    <TextView
-        android:id="@+id/sample_1"
-        android:layout_width="62dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="@string/sample_1"
-        android:fontFamily="@font/lexend"
-        android:textAppearance="@style/sample_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
-
-    <EditText
-        android:id="@+id/editTextNumberDecimal"
-        android:layout_width="323dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:hint="Weight of chicken in kg"
-        android:fontFamily="@font/lexend"
-        android:inputType="numberDecimal"
-        android:padding="15dp"
-        android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
-
-    <!--Sample 2 (Weight in kg)-->
-    <TextView
-        android:id="@+id/sample_2"
-        android:layout_width="63dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="@string/sample_2"
-        android:fontFamily="@font/lexend"
-        android:textAppearance="@style/sample_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintTop_toBottomOf="@id/farm_size" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal4"
-        android:layout_width="317dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="Weight of chicken in kg"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/lexend"
+        android:hint="Weight of chicken in kg"
         android:inputType="numberDecimal"
         android:padding="15dp"
-        android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toBottomOf="@id/sample_2" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/lexend"
+        android:hint="Number of Chickens to weight"
+        android:inputType="number"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sample_size" />
+
+    <TextView
+        android:id="@+id/sample_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lexend"
+        android:gravity="top"
+        android:text="@string/sample_1"
+        android:textAppearance="@style/sample_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumber2" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/lexend"
+        android:hint="Weight of chicken in kg"
+        android:inputType="numberDecimal"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sample_1" />
 
     <TextView
         android:id="@+id/add_information"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:fontFamily="@font/lexend"
         android:gravity="center"
         android:text="@string/add_information"
-        android:fontFamily="@font/lexend"
         android:textAppearance="@style/add_information"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/sample_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lexend"
+        android:gravity="top"
+        android:text="@string/sample_2"
+        android:textAppearance="@style/sample_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumberDecimal" />
 
     <Button
         android:id="@+id/ApplyChangesBTN"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:backgroundTint="@color/neon_green"
         android:text="@string/apply_changes"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal4" />
 
+    <TextView
+        android:id="@+id/farm_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/lexend"
+        android:gravity="top"
+        android:text="@string/farm_size"
+        android:textAppearance="@style/farm_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sample_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lexend"
+        android:gravity="top"
+        android:text="@string/sample_size"
+        android:textAppearance="@style/sample_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
