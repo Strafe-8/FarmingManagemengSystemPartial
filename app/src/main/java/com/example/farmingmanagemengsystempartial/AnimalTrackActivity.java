@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,8 +16,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AnimalTrackActivity extends AppCompatActivity {
     Dialog dialog;
-    ImageView Back, AddGrowthData, applyChanges;
+    ImageView Back, applyChanges;
+    Button AddGrowthData;
 
+    private WeightBarView weightBarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,10 @@ public class AnimalTrackActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_animal_track);
 
-        AddGrowthData = findViewById(R.id.add_growth_box1);
+        weightBarView = findViewById(R.id.weightBar);
+        weightBarView.setAverageWeight(2.5f); // Example weight
+
+        AddGrowthData = findViewById(R.id.Add_growth_Data_Btn);
         AddGrowthData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

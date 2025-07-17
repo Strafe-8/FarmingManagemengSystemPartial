@@ -9,6 +9,7 @@
     <string name="sign_up_btn_txt">SIGN UP</string>
     <string name="back_to_login_txt_btn">Back to Login</string>
     <string name="change_password_txt_btn">CHANGE PASSWORD</string>
+    <string name="add_growth_data_btn_txt">+ Add Growth Data</string>
     <string name="register_txt">Register</string>
     <string name="forgot_password_page_txt">FORGOT PASSWORD</string>
     <string name="register_your_account_txt">Register your account</string>
@@ -58,4 +59,10 @@
     <string name="sample_2">Sample 2</string>
     <string name="apply_changes">APPLY CHANGES</string>
     <string name="todo">TODO\n</string>
+
+    <string name="farm_name">Farm Name:</string>
+
+    <string name="size">Size</string>
+    <string name="Days_Old">Days Old</string>
+
 </resources>
