@@ -33,7 +33,7 @@ public class AnimalTrackActivity extends AppCompatActivity {
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
-                View applyChanges = dialog.findViewById(R.id.imageView14);
+                View applyChanges = dialog.findViewById(R.id.ApplyChangesBTN);
 
                 applyChanges.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -49,7 +49,7 @@ public class AnimalTrackActivity extends AppCompatActivity {
 
 
 
-        Back = findViewById(R.id.imageView);
+        Back = findViewById(R.id.ReturnBtn);
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
