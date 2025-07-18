@@ -175,6 +175,8 @@
         app:layout_constraintTop_toTopOf="@+id/rectangle_"
         app:layout_constraintVertical_bias="0.396" />
 
+
+
     <TextView
         android:id="@+id/Days_Old"
         android:layout_width="wrap_content"
@@ -251,5 +253,53 @@
         app:layout_constraintStart_toStartOf="@+id/weightBar"
         app:layout_constraintTop_toBottomOf="@+id/weightBar"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/sizeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_"
+        app:layout_constraintVertical_bias="0.587" />
+
+    <TextView
+        android:id="@+id/daysOldValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_"
+        app:layout_constraintVertical_bias="0.587" />
+
+    <TextView
+        android:id="@+id/averageWeightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/3.0kg"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_"
+        app:layout_constraintVertical_bias="0.587" />
+
+    <TextView
+        android:id="@+id/targetValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0%"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_"
+        app:layout_constraintVertical_bias="0.587" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
