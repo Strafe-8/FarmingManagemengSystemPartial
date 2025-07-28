@@ -1,54 +1,75 @@
 package com.example.farmingmanagemengsystempartial;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class AnimalTrackActivity extends AppCompatActivity {
-    private ViewPager2 viewPager;
-    private TabLayout tabLayout;
-    private ImageView back;
+    Dialog dialog;
+    ImageView Back, applyChanges;
+    Button AddGrowthData;
+
+    private WeightBarView weightBarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_animal_track);
 
-        viewPager = findViewById(R.id.viewPager);
-        tabLayout = findViewById(R.id.tabLayout);
-        back = findViewById(R.id.ReturnBtn);
+        weightBarView = findViewById(R.id.weightBar);
+        weightBarView.setAverageWeight(2.5f); // Example weight
 
-        // Set the TabLayout background color
-        tabLayout.setBackgroundColor(getResources().getColor(R.color.neon_green)); // Change to your desired color
+        AddGrowthData = findViewById(R.id.Add_growth_Data_Btn);
+        AddGrowthData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog = new Dialog(AnimalTrackActivity.this);
+                dialog.setContentView(R.layout.dialog_add_growth);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        TabAdapter adapter = new TabAdapter(this);
-        viewPager.setAdapter(adapter);
 
-        new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("Growth");
-                            break;
-                        case 1:
-                            tab.setText("Feeds");
-                            break;
-                        case 2:
-                            tab.setText("Mortality");
-                            break;
+                View applyChanges = dialog.findViewById(R.id.ApplyChangesBTN);
+
+                applyChanges.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        dialog.dismiss();
                     }
-                }).attach();
+                });
 
-        back.setOnClickListener(v -> {
-            Intent intent = new Intent(AnimalTrackActivity.this, DashboardActivity.class);
-            startActivity(intent);
+                dialog.show();
+            }
+        });
+
+
+
+        Back = findViewById(R.id.ReturnBtn);
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AnimalTrackActivity.this, DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
     }
 }
