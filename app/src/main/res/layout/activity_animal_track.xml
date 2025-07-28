@@ -2,10 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AnimalTrackActivity">
+
+    <TextView
+        android:id="@+id/trackingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animal Tracking"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lexend"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background="@color/neon_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trackingTitle"
+        app:layout_constraintVertical_bias="0.0"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/white"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageView
         android:id="@+id/ReturnBtn"
@@ -13,243 +45,5 @@
         android:layout_height="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/ic_round_arrow_back_ios" />
-
-    <TextView
-        android:id="@+id/tracking"
-        android:layout_width="120dp"
-        android:layout_height="28dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:gravity="top"
-        android:text="@string/tracking"
-        android:textAppearance="@style/tracking"
-        android:fontFamily="@font/lexend"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061"
-        app:srcCompat="@drawable/rectangle_22__1" />
-
-    <TextView
-        android:id="@+id/growth"
-        android:layout_width="50dp"
-        android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="@string/growth"
-        android:textAppearance="@style/growth"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
-
-    <TextView
-        android:id="@+id/feeds"
-        android:layout_width="45dp"
-        android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="@string/feeds"
-        android:textAppearance="@style/feeds"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
-
-    <TextView
-        android:id="@+id/mortality"
-        android:layout_width="69dp"
-        android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="@string/mortality"
-        android:textAppearance="@style/mortality"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
-
-    <ImageView
-        android:id="@+id/rectangle_"
-        android:layout_width="364dp"
-        android:layout_height="174dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/rectangle_35"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lexend"
-        android:text="STATISTICS"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
-
-    <TextView
-        android:id="@+id/farm_name_f"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:fontFamily="@font/lexend"
-        android:gravity="top"
-        android:text="@string/farm_name"
-        android:textAppearance="@style/farm_name"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.168" />
-
-    <Button
-        android:id="@+id/Add_growth_Data_Btn"
-        android:layout_width="142dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/neon_green"
-        android:text="@string/add_growth_data_btn_txt"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.111" />
-
-    <TextView
-        android:id="@+id/size"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/size"
-        android:textAppearance="@style/size"
-        android:fontFamily="@font/lexend"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.396" />
-
-    <TextView
-        android:id="@+id/Days_Old"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.5"
-        android:fontFamily="@font/lexend"
-        android:gravity="top"
-        android:text="@string/Days_Old"
-        android:textAppearance="@style/size"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.227"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.396" />
-
-    <TextView
-        android:id="@+id/AverageWeight_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.5"
-        android:fontFamily="@font/lexend"
-        android:gravity="top"
-        android:text="@string/average_wei"
-        android:textAppearance="@style/size"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.606"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.396" />
-
-    <TextView
-        android:id="@+id/Target_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.5"
-        android:fontFamily="@font/lexend"
-        android:gravity="top"
-        android:text="Target"
-        android:textAppearance="@style/size"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.396" />
-
-    <com.example.farmingmanagemengsystempartial.WeightBarView
-        android:id="@+id/weightBar"
-        android:layout_width="330dp"
-        android:layout_height="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.785" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:text="(3.0kg) is the target deviation"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="@+id/weightBar"
-        app:layout_constraintTop_toBottomOf="@+id/weightBar"
-        app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
