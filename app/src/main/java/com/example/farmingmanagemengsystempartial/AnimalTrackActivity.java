@@ -27,7 +27,7 @@ public class AnimalTrackActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_animal_track);
 
-        weightBarView = findViewById(R.id.weightBar);
+        weightBarView = findViewById(R.id.weightBar); //
         weightBarView.setAverageWeight(2.5f); // Example weight
 
         AddGrowthData = findViewById(R.id.Add_growth_Data_Btn);
