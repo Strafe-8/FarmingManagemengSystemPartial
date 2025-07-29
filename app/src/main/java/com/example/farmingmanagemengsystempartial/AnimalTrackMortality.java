@@ -14,28 +14,32 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AnimalTrackActivity extends AppCompatActivity {
+public class AnimalTrackMortality extends AppCompatActivity {
     Dialog dialog;
-    ImageView Back, AddGrowthData, applyChanges;
-    TextView Feeds, Mortality;
-
+    ImageView Back, AddReportData, applyChanges;
+    TextView Feeds, Growth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_animal_track);
+        setContentView(R.layout.activity_animal_track_mortality);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        AddGrowthData = findViewById(R.id.add_growth_box1);
-        AddGrowthData.setOnClickListener(new View.OnClickListener() {
+        AddReportData = findViewById(R.id.add_feeding_box2);
+        AddReportData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog = new Dialog(AnimalTrackActivity.this);
-                dialog.setContentView(R.layout.add_growth_data);
+                dialog = new Dialog(AnimalTrackMortality.this);
+                dialog.setContentView(R.layout.add_report_data);
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
-                applyChanges = dialog.findViewById(R.id.imageView37);
+                applyChanges = dialog.findViewById(R.id.imageView38);
 
                 applyChanges.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -49,39 +53,32 @@ public class AnimalTrackActivity extends AppCompatActivity {
             }
         });
 
-        Feeds = findViewById(R.id.feeds);
-        Feeds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AnimalTrackActivity.this, AnimalTrackFeeds.class);
-                startActivity(intent);
-            }
-        });
 
-        Mortality = findViewById(R.id.mortality);
-        Mortality.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AnimalTrackActivity.this, AnimalTrackMortality.class);
-                startActivity(intent);
-            }
-        });
-
-        Back = findViewById(R.id.imageView);
+        Back = findViewById(R.id.imageView31);
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalTrackActivity.this, DashboardActivity.class);
+                Intent intent = new Intent(AnimalTrackMortality.this, DashboardActivity.class);
                 startActivity(intent);
             }
         });
 
+        Feeds = findViewById(R.id.feeds3);
+        Feeds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AnimalTrackMortality.this, AnimalTrackFeeds.class);
+                startActivity(intent);
+            }
+        });
 
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        Growth = findViewById(R.id.growth3);
+        Growth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AnimalTrackMortality.this, AnimalTrackActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }
