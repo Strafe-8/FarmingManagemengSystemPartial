@@ -11,12 +11,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.datepicker.MaterialDatePicker;
+
+import java.util.Calendar;
 
 public class GrowthFragment extends Fragment {
     Dialog dialog;
@@ -58,9 +63,13 @@ public class GrowthFragment extends Fragment {
         // Fetch values from dialog input
         EditText sizeEdit = dialog.findViewById(R.id.editTextNumber);
         EditText sampleSizeEdit = dialog.findViewById(R.id.editTextNumber2);
-        EditText weightOneEdit = dialog.findViewById(R.id.editTextNumberDecimal);
-        EditText weightTwoEdit = dialog.findViewById(R.id.editTextNumberDecimal4);
+        LinearLayout sampleSizeLayout = dialog.findViewById(R.id.sampleSizeLayout);
+        Button generateSamplesButton = dialog.findViewById(R.id.generateSamplesButton);
         Button applyChanges = dialog.findViewById(R.id.ApplyChangesBTN);
+        Button datePickerButton = dialog.findViewById(R.id.datePickerBtn);
+
+        // Initialize the date picker
+        initDatePicker(datePickerButton);
 
         // Sample size restriction
         sampleSizeEdit.addTextChangedListener(new TextWatcher() {
@@ -68,8 +77,8 @@ public class GrowthFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!s.toString().equals("2")) {
-                    sampleSizeEdit.setError("Sample size must be '2' (per app requirements)");
+                if (s.toString().isEmpty()) {
+                    sampleSizeEdit.setError("Sample size cannot be empty");
                 } else {
                     sampleSizeEdit.setError(null); // Clear error if valid
                 }
@@ -78,20 +87,52 @@ public class GrowthFragment extends Fragment {
             public void afterTextChanged(Editable s) {}
         });
 
+        // Generate dynamic EditTexts for sample weights
+        generateSamplesButton.setOnClickListener(v -> {
+            sampleSizeLayout.removeAllViews(); // Clear previous inputs
+            int sampleSize;
+            try {
+                sampleSize = Integer.parseInt(sampleSizeEdit.getText().toString());
+                for (int i = 0; i < sampleSize; i++) {
+                    EditText sampleEditText = new EditText(getActivity());
+                    sampleEditText.setHint("Weight of chicken " + (i + 1) + " in kg");
+                    sampleEditText.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+                    sampleSizeLayout.addView(sampleEditText);
+                }
+            } catch (NumberFormatException e) {
+                sampleSizeEdit.setError("Enter a valid number");
+            }
+        });
+
         // Dialog box
         applyChanges.setOnClickListener(v -> {
             String sizeString = sizeEdit.getText().toString();
             String sampleSizeString = sampleSizeEdit.getText().toString();
-            String weightOneString = weightOneEdit.getText().toString();
-            String weightTwoString = weightTwoEdit.getText().toString();
 
-            if (!sizeString.isEmpty() && !sampleSizeString.isEmpty() && !weightOneString.isEmpty() && !weightTwoString.isEmpty()) {
+            if (!sizeString.isEmpty() && !sampleSizeString.isEmpty()) {
                 int size = Integer.parseInt(sizeString);
                 int sampleSize = Integer.parseInt(sampleSizeString);
-                float weightOne = Float.parseFloat(weightOneString);
-                float weightTwo = Float.parseFloat(weightTwoString);
+                float totalWeight = 0;
+                boolean allWeightsFilled = true;
 
-                float averageWeight = (weightOne + weightTwo) / sampleSize;
+                for (int i = 0; i < sampleSize; i++) {
+                    EditText sampleWeightEdit = (EditText) sampleSizeLayout.getChildAt(i);
+                    if (sampleWeightEdit != null && !sampleWeightEdit.getText().toString().isEmpty()) {
+                        totalWeight += Float.parseFloat(sampleWeightEdit.getText().toString());
+                    } else {
+                        allWeightsFilled = false;
+                        break;
+                    }
+                }
+
+                if (!allWeightsFilled) {
+                    Toast.makeText(getActivity(), "Please fill all weight fields.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                float averageWeight = totalWeight / sampleSize;
                 float deviation = ((averageWeight - 3.0f) / 3.0f) * 100; // Calculating deviation in percentage
 
                 sizeValString.setText(sizeString);
@@ -107,5 +148,55 @@ public class GrowthFragment extends Fragment {
         });
 
         dialog.show();
+    }
+
+    private void initDatePicker(Button datePickerButton) {
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select a date")
+                .setPositiveButtonText("OK")
+                .setNegativeButtonText("Cancel")
+                .build();
+
+        datePickerButton.setOnClickListener(v -> datePicker.show(getParentFragmentManager(), "DATE_PICKER"));
+
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(selection);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int month = calendar.get(Calendar.MONTH) + 1; // Month is 0-based
+            int year = calendar.get(Calendar.YEAR);
+            String date = makeDateString(day, month, year);
+            datePickerButton.setText(date); // Update the button text with the selected date
+        });
+    }
+
+    private String getTodaysDate() {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH) + 1; // Month is 0-based
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+    }
+
+    private String makeDateString(int day, int month, int year) {
+        return getMonthFormat(month) + " " + day + " " + year;
+    }
+
+    private String getMonthFormat(int month) {
+        switch (month) {
+            case 1: return "JAN";
+            case 2: return "FEB";
+            case 3: return "MAR";
+            case 4: return "APR";
+            case 5: return "MAY";
+            case 6: return "JUN";
+            case 7: return "JUL";
+            case 8: return "AUG";
+            case 9: return "SEP";
+            case 10: return "OCT";
+            case 11: return "NOV";
+            case 12: return "DEC";
+            default: return "JAN"; // Default should never happen
+        }
     }
 }

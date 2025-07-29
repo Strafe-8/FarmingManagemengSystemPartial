@@ -39,6 +39,7 @@ dependencies {
     implementation("com.github.PhilJay:MPAndroidChart:3.1.0") // Ensure this is correct
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.google.android.material:material:1.4.0")
+    implementation("com.google.android.material:material:1.7.0") //DatePicker Material
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
