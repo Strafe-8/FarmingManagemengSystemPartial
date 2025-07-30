@@ -1,14 +1,11 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
+        google()
         gradlePluginPortal()
+        mavenCentral()
+    }
+    plugins {
+        id("com.google.gms.google-services") version "4.4.0"
     }
 }
 
